@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/InnoJuris1.ico" type="image/x-icon" />
+    <title>Bootstrap Tutorial</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="demo" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header align-items-start">
+        <div class="d-flex align-items-center gap-3">
+            <img src="img/nin.png" alt="Logo" class="offcanvas-avatar mb-2">
+            <div>
+                <h5 class="offcanvas-title" id="offcanvasLabel">Guía rápida: Componentes</h5>
+                <p class="small mb-0 text-muted">Accesos rápidos, búsqueda y recursos útiles.</p>
+            </div>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar panel"></button>
+    </div>
+    <div class="offcanvas-graphic px-3 pt-2">
+        <!-- Gráfico SVG simple: distribución de componentes -->
+        <svg width="100%" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución de componentes">
+            <rect x="10" y="20" width="60" height="20" fill="#20c9b6"></rect>
+            <text x="80" y="35" font-size="12" fill="#e9fffc">Botones (25%)</text>
+            <rect x="10" y="50" width="90" height="20" fill="#667eea"></rect>
+            <text x="110" y="65" font-size="12" fill="#e9fffc">Cards (30%)</text>
+            <rect x="10" y="80" width="50" height="20" fill="#f093fb"></rect>
+            <text x="70" y="95" font-size="12" fill="#e9fffc">Modales (15%)</text>
+            <rect x="130" y="20" width="60" height="20" fill="#ffb86b"></rect>
+            <text x="200" y="35" font-size="12" fill="#062e2d">Utilidades (20%)</text>
+            <rect x="130" y="50" width="40" height="20" fill="#90cdf4"></rect>
+            <text x="180" y="65" font-size="12" fill="#062e2d">Otros (10%)</text>
+        </svg>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+        <form class="mb-3" role="search" onsubmit="return false;">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Buscar componente... (ej. botones)" aria-label="Buscar componente" id="offcanvasSearch">
+                <button class="btn btn-outline-light" type="button" onclick="offcanvasSearch()">Buscar</button>
+            </div>
+        </form>
+        <nav class="offcanvas-links mb-3" aria-label="Enlaces rápidos">
+            <ul class="list-unstyled">
+                <li class="mb-2"><a href="#botones" class="d-flex align-items-center"><i class="fas fa-hand-pointer me-2"></i>Botones</a></li>
+                <li class="mb-2"><a href="#cards" class="d-flex align-items-center"><i class="fas fa-id-card me-2"></i>Cards</a></li>
+                <li class="mb-2"><a href="#alertas" class="d-flex align-items-center"><i class="fas fa-exclamation-circle me-2"></i>Alertas</a></li>
+                <li class="mb-2"><a href="#badges" class="d-flex align-items-center"><i class="fas fa-tag me-2"></i>Badges</a></li>
+                <li class="mb-2"><a href="#modales" class="d-flex align-items-center"><i class="fas fa-window-restore me-2"></i>Modales</a></li>
+                <li class="mb-2"><a href="#carousel" class="d-flex align-items-center"><i class="fas fa-images me-2"></i>Carousel</a></li>
+                <li class="mb-2"><a href="#accordion" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Accordion</a></li>
+                <li class="mb-2"><a href="#navbar" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Navbar</a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-resources mb-3">
+            <h6 class="text-white-50">Recursos</h6>
+            <ul class="small">
+                <li><a href="https://getbootstrap.com/docs/5.3/components/" target="_blank" rel="noopener" class="text-decoration-none">Documentación oficial</a></li>
+                <li><a href="componentes.html" class="text-decoration-none">Página de Componentes (local)</a></li>
+            </ul>
+        </div>
+        <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-light/25">
+            <div class="small text-white-50">¿Necesitas ayuda? Contáctanos</a></div>
+            <button class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Cerrar">Cerrar</button>
+        </div>
+    </div>
+</div>
+<!-- Button to open the offcanvas sidebar -->
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" aria-controls="demo">
+    <i class="fas fa-bars me-2"></i> Menú
+</button>  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="1-index.html">
+          <img
+            src="img/nin.png"
+            alt="Logo"
+            style="width: 40px"
+            class="rounded-pill"
+          />NXGZ Bootstrap Tutorial
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="1-index.html">
+                <i class="fas fa-home me-1" aria-hidden="true"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="1-index.html">
+                <i class="fas fa-book me-1" aria-hidden="true"></i>Conceptos de
+                Bootstrap
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownConceptosToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Conceptos"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownConceptosToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="#definicion">
+                    ¿Qué es Bootstrap?
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#caracteristicas">
+                    Características Principales
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#componentes">
+                    Componentes de Bootstrap
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#historia">
+                    Historia de Bootstrap
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="2-como.html">
+                <i class="fas fa-question-circle me-1"></i>¿Cómo usar Bootstrap?
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownComoToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Cómo usar"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownComoToggle">
+                <li>
+                  <a class="dropdown-item active" href="#metodos">
+                    <i class="fas fa-th"></i>Métodos de Instalación
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo1">
+                    <i class="fas fa-puzzle-piece"></i>Método 1: CDN
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo2">
+                    <i class="fas fa-tools"></i>Método 2: Descarga
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo3">
+                    <i class="fas fa-tools"></i>Método 3: NPM
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#primeros-pasos">
+                    <i class="fas fa-tools"></i>Primeros Pasos
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#Tips">
+                    <i class="fas fa-tools"></i>Tips Importantes
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#Recursos">
+                    <i class="fas fa-tools"></i>Recursos Útiles
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="3-componentes.html">
+                <i class="fas fa-cube me-1"></i>Componentes
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownComponentesToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Componentes"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownComponentesToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="3-componentes.html">
+                    <i class="fas fa-th-large"></i> Todos los Componentes
+                  </a>
+                </li>
+                <li>
+                  <hr
+                    class="dropdown-divider"
+                    style="border-color: rgba(102, 126, 234, 0.3)"
+                  />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#botones">
+                    <i class="fas fa-hand-pointer"></i> Botones
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#cards">
+                    <i class="fas fa-id-card"></i> Cards
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#alertas">
+                    <i class="fas fa-exclamation-circle"></i> Alertas
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#badges">
+                    <i class="fas fa-tag"></i> Badges
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#modales">
+                    <i class="fas fa-window-restore"></i> Modales
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#carousel">
+                    <i class="fas fa-images"></i> Carousel
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#accordion">
+                    <i class="fas fa-bars"></i> Accordion
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#navbar">
+                    <i class="fas fa-bars"></i> Navbar
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="4-utilidades.html">
+                <i class="fas fa-book me-1"></i>Utilidades
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownUtilidadesToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Utilidades"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownUtilidadesToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="badges.html">
+                    <i class="fas fa-th"></i>Badges o Insignias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="buttons.html">
+                    <i class="fas fa-puzzle-piece"></i>Button o Botón
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="card.html">
+                    <i class="fas fa-tools"></i>Card o Tarjeta
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="collapse.html">
+                    <i class="fas fa-tools"></i>Collapse o Acordeón
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="container.html">
+                    <i class="fas fa-puzzle-piece"></i>Container o Contenedor
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="forms.html">
+                    <i class="fas fa-tools"></i>Formulario
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="list_group.html">
+                    <i class="fas fa-tools"></i>List Group o Lista de Ítems
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="modals.html">
+                    <i class="fas fa-puzzle-piece"></i>Modals
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="navbar.html">
+                    <i class="fas fa-tools"></i>Navbar o Barra de Navegación
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="progressbar.html">
+                    <i class="fas fa-tools"></i>Progress Bar o Barra de Progreso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="tablas.html">
+                    <i class="fas fa-tools"></i>Tablas o Tables
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+        <img src="img/banner.png" width= "100%" class="img-fluid"  alt="banner" >
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">USUARIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LOGÍSTICA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">RECURSOS HUMANOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTABILIDAD</a>       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ADMINISTRACIÓN</a>     
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+         <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">INICIO</a></li>
+            <li class="breadcrumb-item"><a href="#">NOTAS</a></li>
+            <li class="breadcrumb-item"><a href="#">2025</a></li>
+            <li class="breadcrumb-item active">Primero de Sistemas</li>
+         </ul>
+    <div class="row">
+        <div class="col-lg-2"> 
+            <div class="card">
+                <div class="card-header bg-primary text-white"><h3>MENU</h3></div>
+                    <div class="card-body">
+                        <div class = "d-grid gap-2">
+                            <a href="#" class="btn btn-primary btn-block">INICIO</a>
+                            <a href="#" class="btn btn-success btn-block">VENTAS</a>
+                            <a href="#" class="btn btn-primary btn-block">COMPRAS</a>
+                            <a href="#" class="btn btn-success btn-block">CONFIGURACIÓN</a>
+                            <a href="#" class="btn btn-primary btn-block">COTIZACIÓN</a>
+                            <a href="#" class="btn btn-success btn-block">SISTEMA ACADÉMICO</a>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-10"> 
+            <div class="card">
+                <div class="card-header card-header bg-primary text-white"><h3>TABLA BOOTSTRAP CON RESPONSIVE</h3></div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead class="table-dark text-center text-white">
+                                <tr>
+                                    <th>NRO</th>
+                                    <th>ESTUDIANTE</th>
+                                            <th width="250">CALIFICACIÓN</th>
+                                            <th width="150" class="text-center">ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>1</td>
+                                <td> 
+                                    <img data-bs-toggle="collapse" data-bs-target="#u1" src = "img/jamo.png" width="30" class = "img rounded-circle" alt = "Nino"> Ninoshka Godoy Zuazo
+                                </td>
+                                <td class="text-center">
+                                    <div class="progress" style="height:25px">
+                                        <div class="progress-bar bg-success progress-bar-animated progress-bar-striped vetical align text-center" style="width: 100%">100 puntos      
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                                </td>
+                            </tr>
+                            <tr id="u1" class="collapse">
+                                <td colspan="4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/jamo.png" width="200" class="img-thumbnail" alt="Nino">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3>Ninoshka Godoy Zuazo</h3>
+                                            <p><strong>Curso:</strong> Primero de Sistemas</p>
+                                            <p><strong>Correo:</strong> ninoshka@example.com</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><img data-bs-toggle="collapse" data-bs-target="#u2" src = "img/lobo.png" width="30" class = "img rounded-circle" alt = "Nino">Bom Bom</td>
+                                <td class="text-center">
+                                <div class="progress" style="height:25px">
+                                    <div class="progress-bar bg-warning progress-bar-animated progress-bar-striped" style="width: 61%">61 puntos      
+                                </div></td>
+                                <td> 
+                                    <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                                </td>
+                            </tr>
+                             <tr id="u2" class="collapse">
+                                <td colspan="4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/jamo.png" width="200" class="img-thumbnail" alt="Bom Bom">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3>Bom Bom</h3>
+                                            <p><strong>Curso:</strong> Primero de Sistemas</p>
+                                            <p><strong>Correo:</strong> bombom@example.com</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><img data-bs-toggle="collapse" data-bs-target="#u3" src = "img/jamo.png" width="30" class = "img rounded-circle" alt = "Nino">Isabel duarte</td>
+                            <td  class="text-center">
+                            <div class="progress" style="height:25px">
+                                <div class="progress-bar bg-danger progress-bar-animated progress-bar-striped" style="width: 45%">45 puntos      
+                                </div></td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
+                        </tr>
+                        <tr id="u3" class="collapse">
+                                <td colspan="4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/lobo.png" width="200" class="img-thumbnail" alt="Bom Bom">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3>Isabel Duarte</h3>
+                                            <p><strong>Curso:</strong> Primero de Sistemas</p>
+                                            <p><strong>Correo:</strong> isabelduarte@example.com</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><img data-bs-toggle="collapse" data-bs-target="#u4"src = "img/lobo.png" width="30" class = "img rounded-circle" alt = "Nino">Jason Momoa</td>
+                            <td class="text-center">
+                                <div class="progress" style="height:25px">
+                                    <div class="progress-bar bg-primary progress-bar-animated progress-bar-striped" style="width: 78%">78 puntos      
+                                    </div></td>
+                            <td>
+                                <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
+                        </tr>
+                        <tr id="u4" class="collapse">
+                                <td colspan="4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="img/lobo.png" width="200" class="img-thumbnail" alt="Bom Bom">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h3>Jason Momoa</h3>
+                                            <p><strong>Curso:</strong> Primero de Sistemas</p>
+                                            <p><strong>Correo:</strong> jasonmomoa@example.com</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                <div class="card-footer" style="background-color: rgb(162, 228, 206);">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                    </ul>
+                </div>
+            </div>          
+        </div>
+    </div>
+   <br>
+    <div class="row">
+           
+            <div class="col-md-4"><div class="card">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reiciendis facere nihil atque id ducimus optio, pariatur voluptas temporibus alias ratione, architecto quae libero, quibusdam animi aperiam totam ipsam explicabo!</div></div></div>
+            <div class="col-md-4">
+                <div class="card">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reiciendis facere nihil atque id ducimus optio, pariatur voluptas temporibus alias ratione, architecto quae libero, quibusdam animi aperiam totam ipsam explicabo!</div></div></div>
+                <div class="col-md-4"><div class="card">
+                <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reiciendis facere nihil atque id ducimus optio, pariatur voluptas temporibus alias ratione, architecto quae libero, quibusdam animi aperiam totam ipsam explicabo!</div></div></div>
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

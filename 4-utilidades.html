@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/InnoJuris1.ico" type="image/x-icon" />
+    <title>Bootstrap Tutorial</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body>
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="demo" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header align-items-start">
+        <div class="d-flex align-items-center gap-3">
+            <img src="img/nin.png" alt="Logo" class="offcanvas-avatar mb-2">
+            <div>
+                <h5 class="offcanvas-title" id="offcanvasLabel">Guía rápida: Componentes</h5>
+                <p class="small mb-0 text-muted">Accesos rápidos, búsqueda y recursos útiles.</p>
+            </div>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar panel"></button>
+    </div>
+    <div class="offcanvas-graphic px-3 pt-2">
+        <!-- Gráfico SVG simple: distribución de componentes -->
+        <svg width="100%" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución de componentes">
+            <rect x="10" y="20" width="60" height="20" fill="#20c9b6"></rect>
+            <text x="80" y="35" font-size="12" fill="#e9fffc">Botones (25%)</text>
+            <rect x="10" y="50" width="90" height="20" fill="#667eea"></rect>
+            <text x="110" y="65" font-size="12" fill="#e9fffc">Cards (30%)</text>
+            <rect x="10" y="80" width="50" height="20" fill="#f093fb"></rect>
+            <text x="70" y="95" font-size="12" fill="#e9fffc">Modales (15%)</text>
+            <rect x="130" y="20" width="60" height="20" fill="#ffb86b"></rect>
+            <text x="200" y="35" font-size="12" fill="#062e2d">Utilidades (20%)</text>
+            <rect x="130" y="50" width="40" height="20" fill="#90cdf4"></rect>
+            <text x="180" y="65" font-size="12" fill="#062e2d">Otros (10%)</text>
+        </svg>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+        <form class="mb-3" role="search" onsubmit="return false;">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Buscar componente... (ej. botones)" aria-label="Buscar componente" id="offcanvasSearch">
+                <button class="btn btn-outline-light" type="button" onclick="offcanvasSearch()">Buscar</button>
+            </div>
+        </form>
+        <nav class="offcanvas-links mb-3" aria-label="Enlaces rápidos">
+            <ul class="list-unstyled">
+                <li class="mb-2"><a href="#botones" class="d-flex align-items-center"><i class="fas fa-hand-pointer me-2"></i>Botones</a></li>
+                <li class="mb-2"><a href="#cards" class="d-flex align-items-center"><i class="fas fa-id-card me-2"></i>Cards</a></li>
+                <li class="mb-2"><a href="#alertas" class="d-flex align-items-center"><i class="fas fa-exclamation-circle me-2"></i>Alertas</a></li>
+                <li class="mb-2"><a href="#badges" class="d-flex align-items-center"><i class="fas fa-tag me-2"></i>Badges</a></li>
+                <li class="mb-2"><a href="#modales" class="d-flex align-items-center"><i class="fas fa-window-restore me-2"></i>Modales</a></li>
+                <li class="mb-2"><a href="#carousel" class="d-flex align-items-center"><i class="fas fa-images me-2"></i>Carousel</a></li>
+                <li class="mb-2"><a href="#accordion" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Accordion</a></li>
+                <li class="mb-2"><a href="#navbar" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Navbar</a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-resources mb-3">
+            <h6 class="text-white-50">Recursos</h6>
+            <ul class="small">
+                <li><a href="https://getbootstrap.com/docs/5.3/components/" target="_blank" rel="noopener" class="text-decoration-none">Documentación oficial</a></li>
+                <li><a href="componentes.html" class="text-decoration-none">Página de Componentes (local)</a></li>
+            </ul>
+        </div>
+        <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-light/25">
+            <div class="small text-white-50">¿Necesitas ayuda? Contáctanos</a></div>
+            <button class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Cerrar">Cerrar</button>
+        </div>
+    </div>
+</div>
+<!-- Button to open the offcanvas sidebar -->
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" aria-controls="demo">
+    <i class="fas fa-bars me-2"></i> Menú
+</button>
+   
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="1-index.html">
+          <img
+            src="img/nin.png"
+            alt="Logo"
+            style="width: 40px"
+            class="rounded-pill"
+          />NXGZ Bootstrap Tutorial
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="1-index.html">
+                <i class="fas fa-home me-1" aria-hidden="true"></i>Inicio
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="1-index.html">
+                <i class="fas fa-book me-1" aria-hidden="true"></i>Conceptos de
+                Bootstrap
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownConceptosToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Conceptos"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownConceptosToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="#definicion">
+                    ¿Qué es Bootstrap?
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#caracteristicas">
+                    Características Principales
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#componentes">
+                    Componentes de Bootstrap
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#historia">
+                    Historia de Bootstrap
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="2-como.html">
+                <i class="fas fa-question-circle me-1"></i>¿Cómo usar Bootstrap?
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownComoToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Cómo usar"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownComoToggle">
+                <li>
+                  <a class="dropdown-item active" href="#metodos">
+                    <i class="fas fa-th"></i>Métodos de Instalación
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo1">
+                    <i class="fas fa-puzzle-piece"></i>Método 1: CDN
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo2">
+                    <i class="fas fa-tools"></i>Método 2: Descarga
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#metodo3">
+                    <i class="fas fa-tools"></i>Método 3: NPM
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#primeros-pasos">
+                    <i class="fas fa-tools"></i>Primeros Pasos
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#Tips">
+                    <i class="fas fa-tools"></i>Tips Importantes
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#Recursos">
+                    <i class="fas fa-tools"></i>Recursos Útiles
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="3-componentes.html">
+                <i class="fas fa-cube me-1"></i>Componentes
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownComponentesToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Componentes"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownComponentesToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="3-componentes.html">
+                    <i class="fas fa-th-large"></i> Todos los Componentes
+                  </a>
+                </li>
+                <li>
+                  <hr
+                    class="dropdown-divider"
+                    style="border-color: rgba(102, 126, 234, 0.3)"
+                  />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#botones">
+                    <i class="fas fa-hand-pointer"></i> Botones
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#cards">
+                    <i class="fas fa-id-card"></i> Cards
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#alertas">
+                    <i class="fas fa-exclamation-circle"></i> Alertas
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#badges">
+                    <i class="fas fa-tag"></i> Badges
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#modales">
+                    <i class="fas fa-window-restore"></i> Modales
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#carousel">
+                    <i class="fas fa-images"></i> Carousel
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#accordion">
+                    <i class="fas fa-bars"></i> Accordion
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#navbar">
+                    <i class="fas fa-bars"></i> Navbar
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="4-utilidades.html">
+                <i class="fas fa-book me-1"></i>Utilidades
+              </a>
+              <button
+                class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1"
+                id="dropdownUtilidadesToggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                type="button"
+                aria-label="Abrir menú Utilidades"
+              >
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="dropdownUtilidadesToggle"
+              >
+                <li>
+                  <a class="dropdown-item active" href="badges.html">
+                    <i class="fas fa-th"></i>Badges o Insignias
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="buttons.html">
+                    <i class="fas fa-puzzle-piece"></i>Button o Botón
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="card.html">
+                    <i class="fas fa-tools"></i>Card o Tarjeta
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="collapse.html">
+                    <i class="fas fa-tools"></i>Collapse o Acordeón
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="container.html">
+                    <i class="fas fa-puzzle-piece"></i>Container o Contenedor
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="forms.html">
+                    <i class="fas fa-tools"></i>Formulario
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="list_group.html">
+                    <i class="fas fa-tools"></i>List Group o Lista de Ítems
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="modals.html">
+                    <i class="fas fa-puzzle-piece"></i>Modals
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="navbar.html">
+                    <i class="fas fa-tools"></i>Navbar o Barra de Navegación
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="progressbar.html">
+                    <i class="fas fa-tools"></i>Progress Bar o Barra de Progreso
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="tablas.html">
+                    <i class="fas fa-tools"></i>Tablas o Tables
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-section" style="padding: 120px 0 80px; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/banner1.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="text-center">
+                <i class="fas fa-cube fa-5x text-white mb-4" style="opacity: 0.9;"></i>
+                <h1 class="display-3 fw-bold text-white mb-3">Utilidades de Bootstrap</h1>
+                <p class="lead text-white">Elementos reutilizables listos para usar en tus proyectos</p>
+            </div>
+        </div>
+    </div>
+      <section id="utilidades" class="container mt-12">
+    <h2 class="mb-3">Utilidades de Bootstrap</h2>
+    <p>Bootstrap proporciona una serie de utilidades rápidas basadas en clases que permiten aplicar estilos comunes sin necesidad de escribir CSS adicional. A continuación, un resumen en tabla y ejemplos prácticos abajo.</p>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-borderless align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Utilidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Spacing</strong></td>
+            <td>Márgenes y paddings con clases <code>m-*</code> y <code>p-*</code> (0–5).</td>
+            <td><code>class="m-3" / class="px-4"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Display</strong></td>
+            <td>Controla la propiedad display con clases utilitarias (<code>d-block</code>, <code>d-flex</code>, etc.).</td>
+            <td><code>class="d-flex"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Flexbox</strong></td>
+            <td>Utilidades para estructurar con flexbox: alineación y distribución.</td>
+            <td><code>class="d-flex justify-content-between"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Colores</strong></td>
+            <td>Clases para texto y fondo como <code>text-*</code> y <code>bg-*</code>.</td>
+            <td><code>class="text-white bg-success"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Bordes</strong></td>
+            <td>Clases para añadir/quitar bordes y bordes redondeados.</td>
+            <td><code>class="border rounded"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Sombras</strong></td>
+            <td>Niveles de sombra con <code>shadow</code>, <code>shadow-sm</code>, <code>shadow-lg</code>.</td>
+            <td><code>class="shadow-lg"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Tamaños</strong></td>
+            <td>Clases para anchuras/alturas relativas como <code>w-25</code>, <code>w-50</code>, <code>h-100</code>.</td>
+            <td><code>class="w-50"</code></td>
+          </tr>
+          <tr>
+            <td><strong>Tipografía</strong></td>
+            <td>Atajos para peso, estilo y transformación de texto (<code>fw-bold</code>, <code>fst-italic</code>, <code>text-uppercase</code>).</td>
+            <td><code>class="fw-bold fst-italic"</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-3">Debajo tienes ejemplos interactivos que muestran estas utilidades aplicadas en tarjetas.</p>
+  </section>
+
+<section id="utilidades-ejemplos" class="container mt-5">
+    <h2 class="mb-4">Ejemplos Interactivos con Tarjetas</h2>
+    <p>Estas tarjetas demuestran cómo funcionan las utilidades de Bootstrap aplicadas directamente en elementos visibles.</p>
+
+    <!-- GRID DE TARJETAS DEMOSTRATIVAS -->
+    <div class="row g-4">
+
+        <!-- Tarjeta 1: Spacing -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title text-primary">Spacing</h5>
+                <p class="card-text">Ejemplo con clases <code>m-3</code> y <code>p-3</code>.</p>
+                <div class="bg-light border p-3 m-3 text-center">Caja con padding y margen</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Colores -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title text-success">Colores</h5>
+                <p class="card-text">Aplicando <code>text-white</code> y <code>bg-success</code>.</p>
+                <div class="bg-success text-white p-3 text-center rounded">Fondo verde</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Flexbox -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title text-danger">Flexbox</h5>
+                <p class="card-text">Clases: <code>d-flex</code>, <code>justify-content-between</code>.</p>
+                <div class="d-flex justify-content-between bg-light p-3 border rounded">
+                    <span>Elemento 1</span>
+                    <span>Elemento 2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 4: Bordes -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title text-dark">Bordes</h5>
+                <p class="card-text">Ejemplo con <code>border</code> y <code>rounded</code>.</p>
+                <div class="border rounded p-3 text-center">Caja con borde redondeado</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 5: Sombras -->
+        <div class="col-md-4">
+            <div class="card shadow shadow-lg p-3">
+                <h5 class="card-title text-warning">Sombras</h5>
+                <p class="card-text">Ejemplo de <code>shadow-lg</code>.</p>
+                <div class="bg-light p-3 text-center rounded">Caja con sombra grande</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta 6: Tipografía -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-3">
+                <h5 class="card-title text-info">Tipografía</h5>
+                <p class="card-text">Clases: <code>fw-bold</code>, <code>fst-italic</code>, <code>text-uppercase</code>.</p>
+                <div class="p-3 text-center">
+                    <p class="fw-bold">Texto en negrita</p>
+                    <p class="fst-italic">Texto en cursiva</p>
+                    <p class="text-uppercase">mayúsculas automáticas</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="tarjetas-imagenes-hover" class="container mt-5">
+    <h2 class="mb-4">Tarjetas con Imágenes y Efectos Hover</h2>
+    <p>Estas tarjetas incluyen imágenes y animaciones al pasar el cursor para una interacción más atractiva.</p>
+
+
+
+    <div class="row g-4">
+
+        <!-- Tarjeta 1: Imagen con zoom -->
+        <div class="col-md-4">
+            <div class="card hover-card shadow-sm p-3">
+                <div class="img-zoom">
+                    <img src="https://picsum.photos/400/250?random=1" class="w-100" alt="Imagen ejemplo 1">
+                </div>
+                <h5 class="mt-3">Zoom al pasar el cursor</h5>
+                <p>La imagen se acerca suavemente cuando se pasa el mouse.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2: Imagen oscurecida y texto -->
+        <div class="col-md-4">
+            <div class="card hover-card shadow-sm p-3">
+                <div class="position-relative img-zoom">
+                    <img src="https://picsum.photos/400/250?random=2" class="w-100" alt="Imagen ejemplo 2">
+                    <div class="position-absolute bottom-0 w-100 text-white p-2" style="background: rgba(0,0,0,0.4);">
+                        Subtítulo iluminado
+                    </div>
+                </div>
+                <h5 class="mt-3">Imagen con capa oscura</h5>
+                <p>Ideal para destacar texto sobre una fotografía.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3: Hover elevación y borde -->
+        <div class="col-md-4">
+            <div class="card hover-card shadow-sm p-3 border border-2 border-primary">
+                <div class="img-zoom">
+                    <img src="https://picsum.photos/400/250?random=3" class="w-100" alt="Imagen ejemplo 3">
+                </div>
+                <h5 class="mt-3">Efecto combinado</h5>
+                <p>Incluye zoom en la imagen y elevación de la tarjeta.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </main>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/funciones.js"></script>
+  </body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/InnoJuris1.ico" type="image/x-icon">
+    <title>Bootstrap Tutorial</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="demo" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header align-items-start">
+        <div class="d-flex align-items-center gap-3">
+            <img src="img/nin.png" alt="Logo" class="offcanvas-avatar mb-2">
+            <div>
+                <h5 class="offcanvas-title" id="offcanvasLabel">Guía rápida: Componentes</h5>
+                <p class="small mb-0 text-muted">Accesos rápidos, búsqueda y recursos útiles.</p>
+            </div>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Cerrar panel"></button>
+    </div>
+    <div class="offcanvas-graphic px-3 pt-2">
+        <!-- Gráfico SVG simple: distribución de componentes -->
+        <svg width="100%" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución de componentes">
+            <rect x="10" y="20" width="60" height="20" fill="#20c9b6"></rect>
+            <text x="80" y="35" font-size="12" fill="#e9fffc">Botones (25%)</text>
+            <rect x="10" y="50" width="90" height="20" fill="#667eea"></rect>
+            <text x="110" y="65" font-size="12" fill="#e9fffc">Cards (30%)</text>
+            <rect x="10" y="80" width="50" height="20" fill="#f093fb"></rect>
+            <text x="70" y="95" font-size="12" fill="#e9fffc">Modales (15%)</text>
+            <rect x="130" y="20" width="60" height="20" fill="#ffb86b"></rect>
+            <text x="200" y="35" font-size="12" fill="#062e2d">Utilidades (20%)</text>
+            <rect x="130" y="50" width="40" height="20" fill="#90cdf4"></rect>
+            <text x="180" y="65" font-size="12" fill="#062e2d">Otros (10%)</text>
+        </svg>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+        <form class="mb-3" role="search" onsubmit="return false;">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Buscar componente... (ej. botones)" aria-label="Buscar componente" id="offcanvasSearch">
+                <button class="btn btn-outline-light" type="button" onclick="offcanvasSearch()">Buscar</button>
+            </div>
+        </form>
+        <nav class="offcanvas-links mb-3" aria-label="Enlaces rápidos">
+            <ul class="list-unstyled">
+                <li class="mb-2"><a href="#botones" class="d-flex align-items-center"><i class="fas fa-hand-pointer me-2"></i>Botones</a></li>
+                <li class="mb-2"><a href="#cards" class="d-flex align-items-center"><i class="fas fa-id-card me-2"></i>Cards</a></li>
+                <li class="mb-2"><a href="#alertas" class="d-flex align-items-center"><i class="fas fa-exclamation-circle me-2"></i>Alertas</a></li>
+                <li class="mb-2"><a href="#badges" class="d-flex align-items-center"><i class="fas fa-tag me-2"></i>Badges</a></li>
+                <li class="mb-2"><a href="#modales" class="d-flex align-items-center"><i class="fas fa-window-restore me-2"></i>Modales</a></li>
+                <li class="mb-2"><a href="#carousel" class="d-flex align-items-center"><i class="fas fa-images me-2"></i>Carousel</a></li>
+                <li class="mb-2"><a href="#accordion" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Accordion</a></li>
+                <li class="mb-2"><a href="#navbar" class="d-flex align-items-center"><i class="fas fa-bars me-2"></i>Navbar</a></li>
+            </ul>
+        </nav>
+        <div class="offcanvas-resources mb-3">
+            <h6 class="text-white-50">Recursos</h6>
+            <ul class="small">
+                <li><a href="https://getbootstrap.com/docs/5.3/components/" target="_blank" rel="noopener" class="text-decoration-none">Documentación oficial</a></li>
+                <li><a href="componentes.html" class="text-decoration-none">Página de Componentes (local)</a></li>
+            </ul>
+        </div>
+        <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-light/25">
+            <div class="small text-white-50">¿Necesitas ayuda? Contáctanos</a></div>
+            <button class="btn btn-light" data-bs-dismiss="offcanvas" aria-label="Cerrar">Cerrar</button>
+        </div>
+    </div>
+</div>
+<!-- Button to open the offcanvas sidebar -->
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" aria-controls="demo">
+    <i class="fas fa-bars me-2"></i> Menú
+</button>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="1-index.html"> <img src="img/nin.png" alt="Logo" style="width: 40px;" class="rounded-pill">NXGZ Bootstrap Tutorial
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="1-index.html">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="1-index.html">
+                            <i class="fas fa-book me-1" aria-hidden="true"></i>Conceptos de Bootstrap
+                        </a>
+                        <button class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1" id="dropdownConceptosToggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" aria-label="Abrir menú Conceptos">
+                            <i class="fas fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownConceptosToggle">                         <li><a class="dropdown-item active" href="#definicion">
+                                ¿Qué es Bootstrap?
+                            </a></li>
+                            <li><a class="dropdown-item" href="#caracteristicas">
+                                Características Principales
+                            </a></li>
+                            <li><a class="dropdown-item" href="#componentes">
+                                Componentes de Bootstrap
+                            </a></li>
+                            <li><a class="dropdown-item" href="#historia">
+                                Historia de Bootstrap
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="2-como.html">
+                            <i class="fas fa-question-circle me-1"></i>¿Cómo usar Bootstrap?
+                        </a>
+                        <button class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1" id="dropdownComoToggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" aria-label="Abrir menú Cómo usar">
+                            <i class="fas fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownComoToggle">
+                            <li><a class="dropdown-item active" href="#metodos">
+                                <i class="fas fa-th"></i>Métodos de Instalación
+                            </a></li>
+                            <li><a class="dropdown-item" href="#metodo1">
+                                <i class="fas fa-puzzle-piece"></i>Método 1: CDN
+                            </a></li>
+                            <li><a class="dropdown-item" href="#metodo2">
+                                <i class="fas fa-tools"></i>Método 2: Descarga
+                            </a></li>
+                            <li><a class="dropdown-item" href="#metodo3">
+                                <i class="fas fa-tools"></i>Método 3: NPM
+                            </a></li>
+                            <li><a class="dropdown-item" href="#primeros-pasos">
+                                <i class="fas fa-tools"></i>Primeros Pasos
+                            </a></li>
+                            <li><a class="dropdown-item" href="#Tips">
+                                <i class="fas fa-tools"></i>Tips Importantes
+                            </a></li>   
+                            <li><a class="dropdown-item" href="#Recursos">
+                                <i class="fas fa-tools"></i>Recursos Útiles
+                            </a></li>                              
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="3-componentes.html">
+                            <i class="fas fa-cube me-1"></i>Componentes
+                        </a>
+                        <button class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1" id="dropdownComponentesToggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" aria-label="Abrir menú Componentes">
+                            <i class="fas fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownComponentesToggle">
+                            <li><a class="dropdown-item active" href="3-componentes.html">
+                                <i class="fas fa-th-large"></i> Todos los Componentes
+                            </a></li>
+                            <li><hr class="dropdown-divider" style="border-color: rgba(102, 126, 234, 0.3);"></li>
+                            <li><a class="dropdown-item" href="#botones">
+                                <i class="fas fa-hand-pointer"></i> Botones
+                            </a></li>
+                            <li><a class="dropdown-item" href="#cards">
+                                <i class="fas fa-id-card"></i> Cards
+                            </a></li>
+                            <li><a class="dropdown-item" href="#alertas">
+                                <i class="fas fa-exclamation-circle"></i> Alertas
+                            </a></li>
+                            <li><a class="dropdown-item" href="#badges">
+                                <i class="fas fa-tag"></i> Badges
+                            </a></li>
+                            <li><a class="dropdown-item" href="#modales">
+                                <i class="fas fa-window-restore"></i> Modales
+                            </a></li>
+                            <li><a class="dropdown-item" href="#carousel">
+                                <i class="fas fa-images"></i> Carousel
+                            </a></li>
+                            <li><a class="dropdown-item" href="#accordion">
+                                <i class="fas fa-bars"></i> Accordion
+                            </a></li>
+                            <li><a class="dropdown-item" href="#navbar">
+                                <i class="fas fa-bars"></i> Navbar
+                            </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="4-utilidades.html">
+                            <i class="fas fa-book me-1"></i>Utilidades
+                        </a>
+                        <button class="btn btn-link nav-link dropdown-toggle dropdown-toggle-split p-0 ms-1" id="dropdownUtilidadesToggle" data-bs-toggle="dropdown" aria-expanded="false" type="button" aria-label="Abrir menú Utilidades">
+                            <i class="fas fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownUtilidadesToggle">
+                            <li><a class="dropdown-item active" href="badges.html">
+                                <i class="fas fa-th"></i>Badges o Insignias
+                            </a></li>
+                            <li><a class="dropdown-item" href="buttons.html">
+                                <i class="fas fa-puzzle-piece"></i>Button o Botón
+                            </a></li>
+                            <li><a class="dropdown-item" href="card.html">
+                                <i class="fas fa-tools"></i>Card o Tarjeta
+                            </a></li>
+                            <li><a class="dropdown-item" href="collapse.html">
+                                <i class="fas fa-tools"></i>Collapse o Acordeón
+                            </a></li>
+                            <li><a class="dropdown-item" href="container.html">
+                                <i class="fas fa-puzzle-piece"></i>Container o Contenedor
+                            </a></li>
+                            <li><a class="dropdown-item" href="forms.html">
+                                <i class="fas fa-tools"></i>Formulario
+                            </a></li>
+                            <li><a class="dropdown-item" href="list_group.html">
+                                <i class="fas fa-tools"></i>List Group o Lista de Ítems
+                            </a></li>
+                            <li><a class="dropdown-item" href="modals.html">
+                                <i class="fas fa-puzzle-piece"></i>Modals
+                            </a></li>
+                            <li><a class="dropdown-item" href="navbar.html">
+                                <i class="fas fa-tools"></i>Navbar o Barra de Navegación
+                            </a></li>
+                            <li><a class="dropdown-item" href="progressbar.html">
+                                <i class="fas fa-tools"></i>Progress Bar o Barra de Progreso
+                            </a></li>
+                            <li><a class="dropdown-item" href="tablas.html">
+                                <i class="fas fa-tools"></i>Tablas o Tables
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="hero-section" style="padding: 120px 0 80px; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/banner1.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="text-center">
+                <i class="fas fa-tools fa-5x text-white mb-4" style="opacity: 0.9;"></i>
+                <h1 class="display-3 fw-bold text-white mb-3">¿Cómo usar Bootstrap?</h1>
+                <p class="lead text-white">Guía paso a paso para empezar con Bootstrap</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="container my-5" id="metodos">
+        <!-- Métodos de Instalación -->
+        <div class="section-card" id="instalacion">
+            <h2 class="mb-4">
+                <i class="fas fa-download me-2 text-primary"></i>
+                Métodos de Instalación
+            </h2>
+            <p class="lead">Existen varias formas de agregar Bootstrap a tu proyecto. Elige la que mejor se adapte a tus necesidades.</p>
+        </div>
+
+        <!-- Método 1: CDN -->
+        <div class="section-card mt-4" id="metodo1">
+            <div class="timeline-item">
+                <h3>
+                    <i class="fas fa-cloud me-2 text-success"></i>
+                    Método 1: CDN (Recomendado para principiantes)
+                </h3>
+                <p>La forma más rápida y sencilla. Solo agrega estos enlaces en tu archivo HTML:</p>
+                
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle me-2"></i>
+                    <strong>Ventajas:</strong> No requiere descarga, siempre actualizado, carga rápida desde servidores globales
+                </div>
+
+                <h5 class="mt-4 mb-3">Paso 1: Crea tu archivo HTML básico</h5>
+                <div class="code-example">
+                    <code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="es"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Mi Proyecto Bootstrap&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Hola Mundo&lt;/h1&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+                </div>
+
+                <h5 class="mt-4 mb-3">Paso 2: Agrega el CSS de Bootstrap en el &lt;head&gt;</h5>
+                <div class="code-example">
+                    <code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code>
+                </div>
+
+                <h5 class="mt-4 mb-3">Paso 3: Agrega el JavaScript antes de cerrar &lt;/body&gt;</h5>
+                <div class="code-example">
+                    <code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code>
+                </div>
+
+                <h5 class="mt-4 mb-3">Código completo:</h5>
+                <div class="demo-box">
+                    <div class="code-example">
+                        <code>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="es"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Mi Proyecto Bootstrap&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;div class="container mt-5"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="text-primary"&gt;¡Hola Bootstrap!&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-success"&gt;Mi Botón&lt;/button&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Método 2: Descarga -->
+        <div class="section-card mt-4" id="metodo2">
+            <div class="timeline-item">
+                <h3>
+                    <i class="fas fa-download me-2 text-info"></i>
+                    Método 2: Descarga de Archivos
+                </h3>
+                <p>Descarga Bootstrap y guárdalo localmente en tu proyecto.</p>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Ventajas:</strong> Funciona sin conexión a internet, control total sobre los archivos
+                </div>
+
+                <h5 class="mt-4 mb-3">Pasos:</h5>
+                <ol>
+                    <li class="mb-3">
+                        <strong>Descarga Bootstrap</strong> desde 
+                        <a href="https://getbootstrap.com" target="_blank" class="text-primary">getbootstrap.com</a>
+                    </li>
+                    <li class="mb-3">
+                        <strong>Extrae los archivos</strong> en una carpeta de tu proyecto (ej: <code>assets/bootstrap/</code>)
+                    </li>
+                    <li class="mb-3">
+                        <strong>Vincula los archivos</strong> en tu HTML:
+                        <div class="code-example mt-2">
+                            <code>&lt;link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
+&lt;script src="assets/bootstrap/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Método 3: NPM -->
+        <div class="section-card mt-4" id="metodo3">
+            <div class="timeline-item" style="border: none;">
+                <h3>
+                    <i class="fab fa-npm me-2 text-danger"></i>
+                    Método 3: NPM (Para proyectos avanzados)
+                </h3>
+                <p>Si trabajas con Node.js y herramientas de build:</p>
+                
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Nota:</strong> Requiere conocimientos de Node.js y npm
+                </div>
+
+                <div class="code-example">
+                    <code>npm install bootstrap</code>
+                </div>
+
+                <p class="mt-3">Luego importa en tu JavaScript o Sass:</p>
+                <div class="code-example">
+                    <code>import 'bootstrap/dist/css/bootstrap.min.css';<br>
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Primeros Pasos -->
+        <div class="section-card mt-5" id="primeros-pasos">
+            <h2 class="mb-4">
+                <i class="fas fa-play-circle me-2 text-success"></i>
+                Primeros Pasos con Bootstrap
+            </h2>
+
+            <div class="timeline-item">
+                <h4><i class="fas fa-circle me-2 text-primary" style="font-size: 8px;"></i>1. Estructura Básica</h4>
+                <p>Siempre usa un contenedor para organizar tu contenido:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Código:</h6>
+                        <div class="code-example">
+                            <code>&lt;div class="container"&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Mi Título&lt;/h1&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;Mi contenido&lt;/p&gt;<br>
+&lt;/div&gt;</code>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Resultado:</h6>
+                        <div class="demo-box">
+                            <div class="container border border-primary p-3">
+                                <h5>Mi Título</h5>
+                                <p class="mb-0">Mi contenido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h4><i class="fas fa-circle me-2 text-success" style="font-size: 8px;"></i>2. Usa las Clases de Bootstrap</h4>
+                <p>Bootstrap funciona mediante clases CSS. Ejemplos:</p>
+                <div class="demo-box">
+                    <button class="btn btn-primary mb-2">btn btn-primary</button>
+                    <button class="btn btn-success mb-2">btn btn-success</button>
+                    <button class="btn btn-danger mb-2">btn btn-danger</button>
+                    <br>
+                    <span class="badge bg-info">badge bg-info</span>
+                    <span class="badge bg-warning text-dark">badge bg-warning</span>
+                </div>
+                <div class="code-example mt-3">
+                    <code>&lt;button class="btn btn-primary"&gt;Mi Botón&lt;/button&gt;<br>
+&lt;span class="badge bg-info"&gt;Insignia&lt;/span&gt;</code>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h4><i class="fas fa-circle me-2 text-info" style="font-size: 8px;"></i>3. Sistema de Grid</h4>
+                <p>Crea layouts responsivos con el sistema de columnas:</p>
+                <div class="demo-box mb-3">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="bg-primary text-white p-3 rounded mb-2">col-md-4</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-success text-white p-3 rounded mb-2">col-md-4</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-danger text-white p-3 rounded mb-2">col-md-4</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-example">
+                    <code>&lt;div class="row"&gt;<br>
+&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 1&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 2&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 3&lt;/div&gt;<br>
+&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="border: none;">
+                <h4><i class="fas fa-circle me-2 text-warning" style="font-size: 8px;"></i>4. Utilidades de Espaciado</h4>
+                <p>Controla márgenes y padding fácilmente:</p>
+                <div class="demo-box">
+                    <div class="bg-primary text-white p-3 mb-3 rounded">p-3 = padding de 1rem</div>
+                    <div class="bg-success text-white mt-4 p-2 rounded">mt-4 = margin-top de 1.5rem</div>
+                    <div class="bg-info text-white mx-auto p-2 rounded" style="width: 200px;">mx-auto = centrado horizontal</div>
+                </div>
+                <div class="code-example mt-3">
+                    <code>m-{tamaño} = margin<br>
+p-{tamaño} = padding<br>
+mt-3 = margin-top<br>
+mb-4 = margin-bottom<br>
+px-5 = padding horizontal (left + right)<br>
+py-3 = padding vertical (top + bottom)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Importantes -->
+        <div class="section-card mt-4" id="Tips">
+            <h2 class="mb-4">
+                <i class="fas fa-lightbulb me-2 text-warning"></i>
+                Tips Importantes
+            </h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="alert alert-success">
+                        <h6><i class="fas fa-check me-2"></i>Haz (Do's)</h6>
+                        <ul class="mb-0">
+                            <li>Usa la documentación oficial</li>
+                            <li>Combina clases para personalizar</li>
+                            <li>Usa el inspector del navegador</li>
+                            <li>Prueba en diferentes dispositivos</li>
+                            <li>Aprende el sistema de grid primero</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="alert alert-danger">
+                        <h6><i class="fas fa-times me-2"></i>No Hagas (Don'ts)</h6>
+                        <ul class="mb-0">
+                            <li>No modifiques los archivos de Bootstrap directamente</li>
+                            <li>No uses IDs para estilos, usa clases</li>
+                            <li>No olvides la etiqueta viewport</li>
+                            <li>No mezcles versiones de Bootstrap</li>
+                            <li>No uses inline styles si puedes evitarlo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recursos -->
+        <div class="section-card mt-4" id="Recursos">
+            <h2 class="mb-4">
+                <i class="fas fa-book-open me-2 text-info"></i>
+                Recursos Útiles
+            </h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card card-modern h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-code fa-3x mb-3 text-primary"></i>
+                            <h5 class="text-white">Documentación Oficial</h5>
+                            <a href="https://getbootstrap.com/docs/5.3" target="_blank" class="btn btn-sm btn-outline-light">
+                                Visitar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card card-modern h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-paint-brush fa-3x mb-3text-success"></i>
+                            <h5 class="text-white">Ejemplos</h5>
+                            <a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" class="btn btn-sm btn-outline-light">
+                                Ver Ejemplos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card card-modern h-100">
+                        <div class="card-body text-center">
+                            <i class="fab fa-github fa-3x mb-3 text-info"></i>
+                            <h5 class="text-white">GitHub</h5>
+                            <a href="https://github.com/twbs/bootstrap" target="_blank" class="btn btn-sm btn-outline-light">
+                                Código Fuente
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación -->
+        <div class="section-card mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="1-index.html" class="btn btn-outline-light">
+                    <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                </a>
+                <a href="3-componentes.html" class="gradient-btn">
+                    Siguiente: Componentes de Bootstrap
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+     <div class="footer-section mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h5><i class="fas fa-code me-2"></i>Bootstrap Tutorial</h5>
+                    <p class="mb-0">Aprende a crear interfaces modernas y profesionales</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">
+                        <i class="fas fa-heart text-danger"></i> Creado con Bootstrap 5
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
