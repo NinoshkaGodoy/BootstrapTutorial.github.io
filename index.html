@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/InnoJuris1.ico" type="image/x-icon">
-    <title>Cómo usar Bootstrap</title>
+    <title>Bootstrap Tutorial</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="demo" aria-labelledby="offcanvasLabel">
+<!-- Navbar -->
+ <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="demo" aria-labelledby="offcanvasLabel">
     <div class="offcanvas-header align-items-start">
         <div class="d-flex align-items-center gap-3">
             <img src="img/nin.png" alt="Logo" class="offcanvas-avatar mb-2">
@@ -72,7 +73,6 @@
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo" aria-controls="demo">
     <i class="fas fa-bars me-2"></i> Menú
 </button>
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.html"> <img src="img/nin.png" alt="Logo" style="width: 40px;" class="rounded-pill">NXGZ Bootstrap Tutorial
@@ -228,313 +228,131 @@
     <div class="hero-section" style="padding: 120px 0 80px; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/banner1.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="container">
             <div class="text-center">
-                <i class="fas fa-tools fa-5x text-white mb-4" style="opacity: 0.9;"></i>
-                <h1 class="display-3 fw-bold text-white mb-3">¿Cómo usar Bootstrap?</h1>
-                <p class="lead text-white">Guía paso a paso para empezar con Bootstrap</p>
+                <i class="fas fa-th fa-5x text-white mb-4" style="opacity: 0.9;"></i>
+                <h1 class="display-3 fw-bold text-white mb-3">¿Qué es Bootstrap?</h1>
+                <p class="lead text-white">El framework CSS más popular del mundo</p>
             </div>
         </div>
     </div>
 
     <!-- Contenido Principal -->
-    <div class="container my-5" id="metodos">
-        <!-- Métodos de Instalación -->
-        <div class="section-card" id="instalacion">
-            <h2 class="mb-4">
-                <i class="fas fa-download me-2 text-primary"></i>
-                Métodos de Instalación
-            </h2>
-            <p class="lead">Existen varias formas de agregar Bootstrap a tu proyecto. Elige la que mejor se adapte a tus necesidades.</p>
-        </div>
-
-        <!-- Método 1: CDN -->
-        <div class="section-card mt-4" id="metodo1">
-            <div class="timeline-item">
-                <h3>
-                    <i class="fas fa-cloud me-2 text-success"></i>
-                    Método 1: CDN (Recomendado para principiantes)
-                </h3>
-                <p>La forma más rápida y sencilla. Solo agrega estos enlaces en tu archivo HTML:</p>
-                
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle me-2"></i>
-                    <strong>Ventajas:</strong> No requiere descarga, siempre actualizado, carga rápida desde servidores globales
+    <div class="container my-5" id="definicion">
+        <div class="section-card">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">
+                        <i class="fas fa-question-circle me-2 text-primary"></i>
+                        Definición
+                    </h2>
+                    <p class="lead">
+                        <strong>Bootstrap</strong> es un framework front-end de código abierto para diseñar sitios web y aplicaciones web responsivas y móviles.
+                    </p>
+                    <p>
+                        Fue desarrollado originalmente por Twitter en 2011 y actualmente es mantenido por la comunidad de código abierto. Bootstrap proporciona un conjunto de herramientas CSS y JavaScript pre-construidas que facilitan la creación de interfaces de usuario consistentes y atractivas.
+                    </p>
                 </div>
-
-                <h5 class="mt-4 mb-3">Paso 1: Crea tu archivo HTML básico</h5>
-                <div class="code-example">
-                    <code>&lt;!DOCTYPE html&gt;<br>
-&lt;html lang="es"&gt;<br>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
-&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
-&nbsp;&nbsp;&lt;title&gt;Mi Proyecto Bootstrap&lt;/title&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&nbsp;&nbsp;&lt;h1&gt;Hola Mundo&lt;/h1&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</code>
-                </div>
-
-                <h5 class="mt-4 mb-3">Paso 2: Agrega el CSS de Bootstrap en el &lt;head&gt;</h5>
-                <div class="code-example">
-                    <code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code>
-                </div>
-
-                <h5 class="mt-4 mb-3">Paso 3: Agrega el JavaScript antes de cerrar &lt;/body&gt;</h5>
-                <div class="code-example">
-                    <code>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code>
-                </div>
-
-                <h5 class="mt-4 mb-3">Código completo:</h5>
-                <div class="demo-box">
-                    <div class="code-example">
-                        <code>&lt;!DOCTYPE html&gt;<br>
-&lt;html lang="es"&gt;<br>
-&lt;head&gt;<br>
-&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
-&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
-&nbsp;&nbsp;&lt;title&gt;Mi Proyecto Bootstrap&lt;/title&gt;<br>
-&nbsp;&nbsp;&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;<br>
-&nbsp;&nbsp;&lt;div class="container mt-5"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 class="text-primary"&gt;¡Hola Bootstrap!&lt;/h1&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-success"&gt;Mi Botón&lt;/button&gt;<br>
-&nbsp;&nbsp;&lt;/div&gt;<br>
-&nbsp;&nbsp;&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</code>
-                    </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fab fa-bootstrap fa-10x" style="color: rgba(102, 126, 234, 0.8);"></i>
                 </div>
             </div>
-        </div>
 
-        <!-- Método 2: Descarga -->
-        <div class="section-card mt-4" id="metodo2">
-            <div class="timeline-item">
-                <h3>
-                    <i class="fas fa-download me-2 text-info"></i>
-                    Método 2: Descarga de Archivos
-                </h3>
-                <p>Descarga Bootstrap y guárdalo localmente en tu proyecto.</p>
-                
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <strong>Ventajas:</strong> Funciona sin conexión a internet, control total sobre los archivos
-                </div>
-
-                <h5 class="mt-4 mb-3">Pasos:</h5>
-                <ol>
-                    <li class="mb-3">
-                        <strong>Descarga Bootstrap</strong> desde 
-                        <a href="https://getbootstrap.com" target="_blank" class="text-primary">getbootstrap.com</a>
-                    </li>
-                    <li class="mb-3">
-                        <strong>Extrae los archivos</strong> en una carpeta de tu proyecto (ej: <code>assets/bootstrap/</code>)
-                    </li>
-                    <li class="mb-3">
-                        <strong>Vincula los archivos</strong> en tu HTML:
-                        <div class="code-example mt-2">
-                            <code>&lt;link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;<br>
-&lt;script src="assets/bootstrap/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </div>
-
-        <!-- Método 3: NPM -->
-        <div class="section-card mt-4" id="metodo3">
-            <div class="timeline-item" style="border: none;">
-                <h3>
-                    <i class="fab fa-npm me-2 text-danger"></i>
-                    Método 3: NPM (Para proyectos avanzados)
-                </h3>
-                <p>Si trabajas con Node.js y herramientas de build:</p>
-                
-                <div class="alert alert-warning">
-                    <i class="fas fa-exclamation-triangle me-2"></i>
-                    <strong>Nota:</strong> Requiere conocimientos de Node.js y npm
-                </div>
-
-                <div class="code-example">
-                    <code>npm install bootstrap</code>
-                </div>
-
-                <p class="mt-3">Luego importa en tu JavaScript o Sass:</p>
-                <div class="code-example">
-                    <code>import 'bootstrap/dist/css/bootstrap.min.css';<br>
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';</code>
-                </div>
-            </div>
-        </div>
-
-        <!-- Primeros Pasos -->
-        <div class="section-card mt-5" id="primeros-pasos">
-            <h2 class="mb-4">
-                <i class="fas fa-play-circle me-2 text-success"></i>
-                Primeros Pasos con Bootstrap
-            </h2>
-
-            <div class="timeline-item">
-                <h4><i class="fas fa-circle me-2 text-primary" style="font-size: 8px;"></i>1. Estructura Básica</h4>
-                <p>Siempre usa un contenedor para organizar tu contenido:</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h6>Código:</h6>
-                        <div class="code-example">
-                            <code>&lt;div class="container"&gt;<br>
-&nbsp;&nbsp;&lt;h1&gt;Mi Título&lt;/h1&gt;<br>
-&nbsp;&nbsp;&lt;p&gt;Mi contenido&lt;/p&gt;<br>
-&lt;/div&gt;</code>
+            <div class="timeline-item" id="caracteristicas">
+                <h3><i class="fas fa-star me-2 text-warning"></i>Características Principales</h3>
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="card card-modern h-100">
+                            <div class="card-body">
+                                <h5 class="text-white">
+                                    <i class="fas fa-mobile-alt me-2 text-success"></i>
+                                    Diseño Responsivo
+                                </h5>
+                                <p>Sistema de grid flexible que se adapta automáticamente a diferentes tamaños de pantalla (móvil, tablet, desktop).</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h6>Resultado:</h6>
-                        <div class="demo-box">
-                            <div class="container border border-primary p-3">
-                                <h5>Mi Título</h5>
-                                <p class="mb-0">Mi contenido</p>
+                    <div class="col-md-6 mb-3">
+                        <div class="card card-modern h-100">
+                            <div class="card-body">
+                                <h5 class="text-white">
+                                    <i class="fas fa-puzzle-piece me-2 text-info"></i>
+                                    Componentes Pre-construidos
+                                </h5>
+                                <p>Incluye botones, formularios, navbars, cards, modales y muchos más componentes listos para usar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card card-modern h-100">
+                            <div class="card-body">
+                                <h5 class="text-white">
+                                    <i class="fas fa-palette me-2 text-danger"></i>
+                                    Personalizable
+                                </h5>
+                                <p>Puedes personalizar colores, espaciados y estilos usando variables CSS o Sass.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card card-modern h-100">
+                            <div class="card-body">
+                                <h5 class="text-white">
+                                    <i class="fas fa-users me-2 text-warning"></i>
+                                    Gran Comunidad
+                                </h5>
+                                <p>Amplia documentación, tutoriales y soporte de una comunidad global de desarrolladores.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="timeline-item">
-                <h4><i class="fas fa-circle me-2 text-success" style="font-size: 8px;"></i>2. Usa las Clases de Bootstrap</h4>
-                <p>Bootstrap funciona mediante clases CSS. Ejemplos:</p>
+            <div class="timeline-item" id="componentes">
+                <h3><i class="fas fa-layer-group me-2 text-primary"></i>Componentes de Bootstrap</h3>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="demo-box text-center">
+                            <i class="fas fa-th fa-3x mb-3 text-primary"></i>
+                            <h5>Sistema Grid</h5>
+                            <p class="small">Sistema de 12 columnas para layouts responsivos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="demo-box text-center">
+                            <i class="fas fa-paint-brush fa-3x mb-3 text-success"></i>
+                            <h5>Utilidades CSS</h5>
+                            <p class="small">Clases para espaciado, colores, texto y más</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="demo-box text-center">
+                            <i class="fas fa-cogs fa-3x mb-3 text-info"></i>
+                            <h5>JavaScript</h5>
+                            <p class="small">Plugins para modales, tooltips, dropdowns</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item" style="border: none;" id="historia">
+                <h3><i class="fas fa-history me-2 text-success"></i>Historia Breve</h3>
                 <div class="demo-box">
-                    <button class="btn btn-primary mb-2">btn btn-primary</button>
-                    <button class="btn btn-success mb-2">btn btn-success</button>
-                    <button class="btn btn-danger mb-2">btn btn-danger</button>
-                    <br>
-                    <span class="badge bg-info">badge bg-info</span>
-                    <span class="badge bg-warning text-dark">badge bg-warning</span>
-                </div>
-                <div class="code-example mt-3">
-                    <code>&lt;button class="btn btn-primary"&gt;Mi Botón&lt;/button&gt;<br>
-&lt;span class="badge bg-info"&gt;Insignia&lt;/span&gt;</code>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <h4><i class="fas fa-circle me-2 text-info" style="font-size: 8px;"></i>3. Sistema de Grid</h4>
-                <p>Crea layouts responsivos con el sistema de columnas:</p>
-                <div class="demo-box mb-3">
-                    <div class="row text-center">
-                        <div class="col-md-4">
-                            <div class="bg-primary text-white p-3 rounded mb-2">col-md-4</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-success text-white p-3 rounded mb-2">col-md-4</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-danger text-white p-3 rounded mb-2">col-md-4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="code-example">
-                    <code>&lt;div class="row"&gt;<br>
-&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 1&lt;/div&gt;<br>
-&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 2&lt;/div&gt;<br>
-&nbsp;&nbsp;&lt;div class="col-md-4"&gt;Columna 3&lt;/div&gt;<br>
-&lt;/div&gt;</code>
-                </div>
-            </div>
-
-            <div class="timeline-item" style="border: none;">
-                <h4><i class="fas fa-circle me-2 text-warning" style="font-size: 8px;"></i>4. Utilidades de Espaciado</h4>
-                <p>Controla márgenes y padding fácilmente:</p>
-                <div class="demo-box">
-                    <div class="bg-primary text-white p-3 mb-3 rounded">p-3 = padding de 1rem</div>
-                    <div class="bg-success text-white mt-4 p-2 rounded">mt-4 = margin-top de 1.5rem</div>
-                    <div class="bg-info text-white mx-auto p-2 rounded" style="width: 200px;">mx-auto = centrado horizontal</div>
-                </div>
-                <div class="code-example mt-3">
-                    <code>m-{tamaño} = margin<br>
-p-{tamaño} = padding<br>
-mt-3 = margin-top<br>
-mb-4 = margin-bottom<br>
-px-5 = padding horizontal (left + right)<br>
-py-3 = padding vertical (top + bottom)</code>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tips Importantes -->
-        <div class="section-card mt-4" id="Tips">
-            <h2 class="mb-4">
-                <i class="fas fa-lightbulb me-2 text-warning"></i>
-                Tips Importantes
-            </h2>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="alert alert-success">
-                        <h6><i class="fas fa-check me-2"></i>Haz (Do's)</h6>
-                        <ul class="mb-0">
-                            <li>Usa la documentación oficial</li>
-                            <li>Combina clases para personalizar</li>
-                            <li>Usa el inspector del navegador</li>
-                            <li>Prueba en diferentes dispositivos</li>
-                            <li>Aprende el sistema de grid primero</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="alert alert-danger">
-                        <h6><i class="fas fa-times me-2"></i>No Hagas (Don'ts)</h6>
-                        <ul class="mb-0">
-                            <li>No modifiques los archivos de Bootstrap directamente</li>
-                            <li>No uses IDs para estilos, usa clases</li>
-                            <li>No olvides la etiqueta viewport</li>
-                            <li>No mezcles versiones de Bootstrap</li>
-                            <li>No uses inline styles si puedes evitarlo</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recursos -->
-        <div class="section-card mt-4" id="Recursos">
-            <h2 class="mb-4">
-                <i class="fas fa-book-open me-2 text-info"></i>
-                Recursos Útiles
-            </h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card card-modern h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-file-code fa-3x mb-3 text-primary"></i>
-                            <h5 class="text-white">Documentación Oficial</h5>
-                            <a href="https://getbootstrap.com/docs/5.3" target="_blank" class="btn btn-sm btn-outline-light">
-                                Visitar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card card-modern h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-paint-brush fa-3x mb-3text-success"></i>
-                            <h5 class="text-white">Ejemplos</h5>
-                            <a href="https://getbootstrap.com/docs/5.3/examples/" target="_blank" class="btn btn-sm btn-outline-light">
-                                Ver Ejemplos
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card card-modern h-100">
-                        <div class="card-body text-center">
-                            <i class="fab fa-github fa-3x mb-3 text-info"></i>
-                            <h5 class="text-white">GitHub</h5>
-                            <a href="https://github.com/twbs/bootstrap" target="_blank" class="btn btn-sm btn-outline-light">
-                                Código Fuente
-                            </a>
-                        </div>
-                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong class="text-primary">2011:</strong> Lanzado por Twitter como "Twitter Bootstrap"
+                        </li>
+                        <li class="mb-3">
+                            <strong class="text-primary">2012:</strong> Bootstrap 2 - Mayor expansión y adopción
+                        </li>
+                        <li class="mb-3">
+                            <strong class="text-primary">2013:</strong> Bootstrap 3 - Diseño "mobile-first"
+                        </li>
+                        <li class="mb-3">
+                            <strong class="text-primary">2018:</strong> Bootstrap 4 - Migración a Flexbox
+                        </li>
+                        <li>
+                            <strong class="text-primary">2021:</strong> Bootstrap 5 - Eliminación de jQuery, mejoras CSS
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -545,16 +363,15 @@ py-3 = padding vertical (top + bottom)</code>
                 <a href="1-index.html" class="btn btn-outline-light">
                     <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
                 </a>
-                <a href="3-componentes.html" class="gradient-btn">
-                    Siguiente: Componentes de Bootstrap
+                <a href="2-como.html" class="gradient-btn">
+                    Siguiente: ¿Cómo usar Bootstrap?
                     <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
     </div>
-
     <!-- Footer -->
-     <div class="footer-section mt-5">
+    <div class="footer-section mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
@@ -571,4 +388,4 @@ py-3 = padding vertical (top + bottom)</code>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html
